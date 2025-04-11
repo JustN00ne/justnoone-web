@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Configuration
     const OPACITY = 0.15;    // Overall transparency
-    const INTENSITY = 0.6;    // Noise strength (0-1)
+    const INTENSITY = 0.8;    // Noise strength (0-1)
     const FPS = 24;           // Frames per second
 
     // Setup canvas
