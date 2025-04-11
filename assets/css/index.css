@@ -1,0 +1,312 @@
+@import url('https://fonts.cdnfonts.com/css/grammatika');
+@import url('https://fonts.cdnfonts.com/css/serious-rounded');
+
+:root{
+    --white : #FFFFFF;
+    --black : #000000;
+
+    --magenta : #FF00BB;
+    --purple : #B700FF;
+
+    --trans_white : rgba(255, 255, 255, 0.5);
+
+    --font_main : 'GramatikaTrial', serif;
+    --font_sub : 'seriousr2', sans-serif;
+}
+
+/* GramatikaTrial Font Faces */
+@font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-BlackItalic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-BoldItalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-ExtraLight.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-ExtraLightItalic.otf') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: var(--font_main);
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    background: var(--black);
+    overflow: hidden;
+}
+
+.noise-overlay {
+    position: relative;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/png;base64,..."); /* Generated via JS */
+    background-repeat: repeat;
+    pointer-events: none; /* Allows interaction with content below */
+    mix-blend-mode: overlay; /* Blend mode */
+    opacity: 1; /* Adjust intensity */
+    z-index: 9999; /* Ensure it's on top */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity changes */
+    backdrop-filter: blur(70px);
+}
+
+.background_cont{
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    position: absolute;
+}
+
+.mouse_follow {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background: var(--white);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    transition: transform 0.05s ease-out; /* Smooth movement */
+    mix-blend-mode: plus-lighter;
+}
+
+.backdrop_div_1{
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    z-index: 0;
+    background: linear-gradient(315deg, #FF01BC, #BB01FF);
+    filter: blur(15vh);
+    top: 5vh;
+    left: 5vw;
+}
+
+.backdrop_div_2{
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    z-index: 0;
+    background: linear-gradient(55deg, #FF01BC, #BB01FF);
+    filter: blur(10vh);
+    top: 20vh;
+    left: 50vw;
+}
+
+.backdrop_div_3{
+    position: relative;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    z-index: 0;
+    background: linear-gradient(155deg, #FF01BC, #BB01FF);
+    filter: blur(15vh);
+    top: 70vh;
+    left: 70vw;
+}
+
+.backdrop_blurry_cirl_inner{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+.foreground{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 1000000000;
+}
+
+.language{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 5rem;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.lang_switch{
+    width: fit-content;
+    height: fit-content;
+    font-family: var(--font_sub);
+    color: var(--trans_white);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.lang_switch:hover{
+    color: var(--white);
+    transition: 0.3s;
+}
+
+.main{
+    position: absolute;
+    display: flex;
+    width: 85vw;
+    height: 60vh;
+    padding: 150px;
+    pointer-events: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.title{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.title_above{
+    margin: -4px 0;
+    color: var(--white);
+    font-family: var(--font_sub);
+    font-size: 1.9rem;
+}
+
+.title_main{
+    margin: -4px 0;
+    color: var(--white);
+    font-family: var(--font_main);
+    font-size: 7rem;
+    font-weight: 900;
+}
+
+.buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.button_main{
+    pointer-events: all;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 70px;
+    background-color: var(--white);
+    border-radius: 500px;
+    border: var(--white) 3px solid;
+    font-family: var(--font_main);
+    font-size: 1.2em;
+    transition: 0.3s;
+}
+
+.button_main:hover{
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--white);
+    border: var(--white) 3px solid;
+    transition: 0.3s;
+}
+
+.button_secondary{
+    pointer-events: all;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 70px;
+    background-color: transparent;
+    border-radius: 500px;
+    color: var(--white);
+    border: var(--white) 3px solid;
+    font-family: var(--font_main);
+    font-size: 1.2em;
+    transition: 0.3s;
+}
+
+.button_secondary:hover{
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--black);
+    border: var(--white) 3px solid;
+    transition: 0.3s;
+}
