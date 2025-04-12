@@ -148,6 +148,7 @@ body{
     z-index: 100;
     transition: transform 0.05s ease-out; /* Smooth movement */
     mix-blend-mode: plus-lighter;
+    filter: blur(50px);
 }
 
 .backdrop_div_1{
@@ -160,6 +161,7 @@ body{
     filter: blur(15vh);
     top: 5vh;
     left: 5vw;
+    animation: bg_1 1.5s cubic-bezier(0,1,.33,1);
 }
 
 .backdrop_div_2{
@@ -172,6 +174,7 @@ body{
     filter: blur(10vh);
     top: 20vh;
     left: 50vw;
+    animation: bg_2 1.5s cubic-bezier(0,1,.33,1);
 }
 
 .backdrop_div_3{
@@ -184,7 +187,42 @@ body{
     filter: blur(15vh);
     top: 70vh;
     left: 70vw;
+    animation: bg_3 1.5s cubic-bezier(0,1,.33,1);
 }
+
+@keyframes bg_1{
+    0% {
+        top: 100vh;
+        left: -50vw;
+    }
+    100% {
+        top: 5vh;
+        left: 5vw;
+    }
+}
+
+@keyframes bg_2{
+  0% {
+      top: -20vh;
+      left: 40vw; 
+  }
+  100% {
+      top: 20vh;
+      left: 50vw;
+  }
+}
+
+@keyframes bg_3{
+  0% {
+      top: 120vh;
+      left: 120vw;
+  }
+  100% {
+      top: 70vh;
+      left: 70vw;
+  }
+}
+
 
 .backdrop_blurry_cirl_inner{
     width: 100vw;

@@ -59,16 +59,50 @@
         <div class="noise-overlay"></div>
 
         <div class="background_cont">
-            
+
             <div class="backdrop_blurry_cirl">
                 <div class="backdrop_blurry_cirl_inner">
-                    <div class="backdrop_div_1"></div>
-                    <div class="backdrop_div_2"></div>
-                    <div class="backdrop_div_3"></div>
+                    <div class="backdrop_div_1" id="bg_b1"></div>
+                    <div class="backdrop_div_2" id="bg_b2"></div>
+                    <div class="backdrop_div_3" id="bg_b3"></div>
                 </div>
             </div>
 
         </div>
-
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              // Configuration: ID -> Animation class
+              const animations = {
+                'bg_b1': 'bg_1',
+                'bg_b2': 'bg_2',
+                'bg_b3': 'bg_3'
+              };
+        
+              // Trigger animations
+              for (const [id, animationClass] of Object.entries(animations)) {
+                const element = document.getElementById(id);
+                
+                if (!element) {
+                  console.error(`Element with ID ${id} not found!`);
+                  continue;
+                }
+        
+                // Reset animation
+                element.style.animation = 'none';
+                void element.offsetWidth; // Trigger reflow
+        
+                // Apply animation
+                element.style.animation = '';
+                element.classList.add(animationClass);
+        
+                // Cleanup after animation
+                element.addEventListener('animationend', () => {
+                  element.classList.remove(animationClass);
+                });
+        
+                console.log(`Triggered ${animationClass} on ${id}`);
+              }
+            });
+          </script>
     </body>
 </html>

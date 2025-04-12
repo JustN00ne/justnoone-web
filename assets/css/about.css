@@ -1,0 +1,114 @@
+@import url('https://fonts.cdnfonts.com/css/grammatika');
+@import url('https://fonts.cdnfonts.com/css/serious-rounded');
+
+:root{
+    --white : #FFFFFF;
+    --black : #000000;
+
+    --magenta : #FF00BB;
+    --purple : #B700FF;
+
+    --trans_white : rgba(255, 255, 255, 0.5);
+
+    --font_main : 'GramatikaTrial', serif;
+    --font_sub : 'seriousr2', sans-serif;
+}
+
+/* GramatikaTrial Font Faces */
+@font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-BlackItalic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-BoldItalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-ExtraLight.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-ExtraLightItalic.otf') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'GramatikaTrial';
+    src: url('../fonts/GramatikaTrial-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: var(--font_main);
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    background: var(--black);
+    overflow: hidden;
+}
+
