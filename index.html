@@ -9,6 +9,8 @@
         <script src="/assets/javascript/noise_bg.js" defer></script>
         <script src="/assets/javascript/mouse_follow.js" defer></script>
         <script src="/assets/javascript/translation.js" defer></script>
+        <script src="/assets/javascript/animate.js" defer></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/mirage.js" defer></script>
         <link rel="stylesheet" href="/assets/css/index.css" />
         <link href="https://fonts.cdnfonts.com/css/grammatika" rel="stylesheet">
 
@@ -36,6 +38,10 @@
         <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon-180x180.png" />
     </head>
     <body>
+      <div id="loading-screen" class="loading-screen">
+        <l-mirage size="60" speed="2.5" color="white"></l-mirage>
+        <p style="margin-bottom: 0.5em; color: white; text-align: center;" class="loader_warning" >Mobile support is not intended!<br>Use a computer please!</p>
+      </div>
 
         <div class="foreground">
             <div class="language">
@@ -69,40 +75,6 @@
             </div>
 
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-              // Configuration: ID -> Animation class
-              const animations = {
-                'bg_b1': 'bg_1',
-                'bg_b2': 'bg_2',
-                'bg_b3': 'bg_3'
-              };
-        
-              // Trigger animations
-              for (const [id, animationClass] of Object.entries(animations)) {
-                const element = document.getElementById(id);
-                
-                if (!element) {
-                  console.error(`Element with ID ${id} not found!`);
-                  continue;
-                }
-        
-                // Reset animation
-                element.style.animation = 'none';
-                void element.offsetWidth; // Trigger reflow
-        
-                // Apply animation
-                element.style.animation = '';
-                element.classList.add(animationClass);
-        
-                // Cleanup after animation
-                element.addEventListener('animationend', () => {
-                  element.classList.remove(animationClass);
-                });
-        
-                console.log(`Triggered ${animationClass} on ${id}`);
-              }
-            });
-          </script>
+
     </body>
 </html>
