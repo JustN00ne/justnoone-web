@@ -149,7 +149,8 @@ body{
     transition: transform 0.05s ease-out; /* Smooth movement */
     mix-blend-mode: plus-lighter;
     filter: blur(50px);
-    display: none; /* Initially hidden */
+    opacity: 1;
+    display: block; /* Change from 'none' to 'block' */
 }
 
 .backdrop_div_1{
@@ -164,8 +165,8 @@ body{
     left: 5vw;
     animation: bg_1 3.5s cubic-bezier(0,1,.33,1);
     animation-fill-mode: forwards !important;
-    animation-delay: 15s;
-    display: none; /* Initially hidden */
+    display: block; /* Change from 'none' to 'block' */
+    opacity: 1;
 }
 
 .backdrop_div_2{
@@ -180,8 +181,8 @@ body{
     left: 50vw;
     animation: bg_2 3.2s cubic-bezier(0,1,.33,1);
     animation-fill-mode: forwards !important;
-    animation-delay: 15s;
-    display: none; /* Initially hidden */
+    display: block; /* Change from 'none' to 'block' */
+    opacity: 1;
 }
 
 .backdrop_div_3{
@@ -196,40 +197,61 @@ body{
     left: 70vw;
     animation: bg_3 3.4s cubic-bezier(0,1,.33,1);
     animation-fill-mode: forwards !important;
-    animation-delay: 15s;
-    display: none; /* Initially hidden */
+    display: block; /* Change from 'none' to 'block' */
+    opacity: 1;
 }
 
 /* Animation classes */
 .animate-bg-1 {
-    animation: bg_1 3.5s cubic-bezier(0,1,.33,1) forwards !important;
+    animation: bg_1 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+    opacity: 1;
 }
 
 .animate-bg-2 {
-    animation: bg_2 3.2s cubic-bezier(0,1,.33,1) forwards !important;
+    animation: bg_2 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+    opacity: 1;
 }
 
 .animate-bg-3 {
-    animation: bg_3 3.4s cubic-bezier(0,1,.33,1) forwards !important;
+    animation: bg_3 3.4s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+    opacity: 1;
 }
 
 .animate-mouse {
-    animation: mouse_follow 1s ease-out forwards !important;
+    animation: mouse_follow 4s ease-out forwards !important;
 }
 
 @keyframes bg_1 {
-    0% { top: 120vh; left: -120vw; }
-    100% { top: 5vh; left: 5vw; }
+    0% { 
+        transform: translate(-120vw, 120vh);
+        opacity: 0;
+    }
+    100% { 
+        transform: translate(0, 0);
+        opacity: 1;
+    }
 }
 
 @keyframes bg_2 {
-    0% { top: -50vh; left: 190vw; }
-    100% { top: 20vh; left: 50vw; }
+    0% { 
+        transform: translate(190vw, -50vh);
+        opacity: 0;
+    }
+    100% { 
+        transform: translate(0, 0);
+        opacity: 1;
+    }
 }
 
 @keyframes bg_3 {
-    0% { top: 120vh; left: 120vw; }
-    100% { top: 70vh; left: 70vw; }
+    0% { 
+        transform: translate(120vw, 120vh);
+        opacity: 0;
+    }
+    100% { 
+        transform: translate(0, 0);
+        opacity: 1;
+    }
 }
 
 @keyframes mouse_follow {
